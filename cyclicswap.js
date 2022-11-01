@@ -8,8 +8,7 @@ const WALLET_ADDRESS = process.env.WALLET_ADDRESS
 const WALLET_SECRET = process.env.WALLET_SECRET
 const INFURA_TEST_URL = process.env.INFURA_TEST_URL
 
-const { abi: V3SwapRouterABI } = require('@uniswap/v3-periphery/artifacts/contracts/interfaces/ISwapRouter.sol/ISwapRouter.sol/ISwapRouter.json')
-//const { abi: V3SwapRouterABI } from '@uniswap/v3-periphery/artifacts/contracts/interfaces/ISwapRouter.sol/ISwapRouter.sol/ISwapRouter.json'
+const { abi: V3SwapRouterABI } = require('@uniswap/v3-periphery/artifacts/contracts/interfaces/ISwapRouter.sol/ISwapRouter.json')
 
 const V3SwapRouterAddress = '0xE592427A0AEce92De3Edee1F18E0157C05861564'
 const WETHAddress = '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6';
@@ -28,7 +27,7 @@ const signer = wallet.connect(provider)
 //Start - Copied from https://github.com/Uniswap/v3-periphery/blob/main/test/shared/path.ts
 const FEE_SIZE = 3
 
-export function encodePath(path, fees) {
+module.exports = function encodePath(path, fees) {
   if (path.length != fees.length + 1) {
     throw new Error('path/fee lengths do not match')
   }
@@ -64,6 +63,7 @@ async function cyclicSwap() {
 		amountOutMinimum: 0
 	}
 
+	/*
 	const encodedData = swapRouterContract.interface.encodeFunctionData("exactInput", [params])
 
 	const txArgs = {
@@ -77,7 +77,7 @@ async function cyclicSwap() {
 	console.log('tx',tx)
 	const receipt = await tx.wait()
 	console.log('receipt', receipt)
-	
+	*/
 }
 
 async function main() {
