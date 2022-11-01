@@ -1,0 +1,32 @@
+{
+  "name": "cyclicswap_uniswapv3_js",
+  "version": "1.0.0",
+  "description": "Cyclic Swap with UniSwap V3 and Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonchua/cyclicswap_uniswapv3_js.git"
+  },
+  "keywords": [
+    "Cyclic",
+    "Swap",
+    "Uniswap",
+    "V3",
+    "Javascript",
+    "Web3"
+  ],
+  "author": "Brandon Chua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonchua/cyclicswap_uniswapv3_js/issues"
+  },
+  "homepage": "https://github.com/brandonchua/cyclicswap_uniswapv3_js#readme",
+  "dependencies": {
+    "@uniswap/v3-periphery": "^1.4.3",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2"
+  }
+}
