@@ -27,7 +27,7 @@ const signer = wallet.connect(provider)
 //Start - Copied from https://github.com/Uniswap/v3-periphery/blob/main/test/shared/path.ts
 const FEE_SIZE = 3
 
-module.exports = function encodePath(path, fees) {
+function encodePath(path, fees) {
   if (path.length != fees.length + 1) {
     throw new Error('path/fee lengths do not match')
   }
@@ -63,7 +63,6 @@ async function cyclicSwap() {
 		amountOutMinimum: 0
 	}
 
-	/*
 	const encodedData = swapRouterContract.interface.encodeFunctionData("exactInput", [params])
 
 	const txArgs = {
@@ -77,7 +76,7 @@ async function cyclicSwap() {
 	console.log('tx',tx)
 	const receipt = await tx.wait()
 	console.log('receipt', receipt)
-	*/
+	
 }
 
 async function main() {
